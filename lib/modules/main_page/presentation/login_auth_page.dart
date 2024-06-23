@@ -1,8 +1,11 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:auth0_flutter/auth0_flutter.dart';
+import 'package:designli/components/native_channel/channel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:notification_permissions/notification_permissions.dart';
 import 'package:provider/provider.dart';
 
 import '../../../components/widgets/buttons/primary_button.dart';
@@ -23,6 +26,16 @@ class _LoginAuth0PageState extends State<LoginAuth0Page> {
   void initState() {
     super.initState();
     _auth0authenticaionViewModel = context.read<Auth0AuthenticaionViewModel>();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (Platform.isIOS) {
+        requestPermission();
+      }
+    });
+  }
+
+  Future<void> requestPermission() async {
+    NotificationPermissions.requestNotificationPermissions(
+        iosSettings: const NotificationSettingsIos());
   }
 
   Future<void> login() async {
@@ -43,13 +56,19 @@ class _LoginAuth0PageState extends State<LoginAuth0Page> {
           child: ButtonPrimary(
             isActive: true,
             onPressed: () async {
-              login().then((_) {
-                Navigator.pop(context);
-              });
+              if (Platform.isAndroid) {
+                login().then((_) {
+                  Navigator.pop(context);
+                });
 
-              Navigator.push(context, MaterialPageRoute(builder: (_) {
-                return const MainPageMultipleSelection();
-              }));
+                Navigator.push(context, MaterialPageRoute(builder: (_) {
+                  return const MainPageMultipleSelection();
+                }));
+              } else {
+                Navigator.push(context, MaterialPageRoute(builder: (_) {
+                  return const MainPageMultipleSelection();
+                }));
+              }
             },
             text: "Auth Login",
             width: MediaQuery.of(context).size.width * 0.5,

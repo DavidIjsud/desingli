@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:designli/components/widgets/buttons/primary_button.dart';
 import 'package:designli/modules/graph_plotting/presentation/graph_plotting.dart';
 import 'package:designli/modules/selection_stock/presentation/selection_stock_presentation.dart';
@@ -102,9 +104,14 @@ class _MainPageMultipleSelectionState extends State<MainPageMultipleSelection> {
             ButtonPrimary(
               isActive: true,
               onPressed: () {
-                _auth0authenticaionViewModel.logoutAuth0();
                 context.read<WatchListViewModel>().disconnectSocket();
-                Navigator.pop(context);
+                if (Platform.isAndroid) {
+                  _auth0authenticaionViewModel.logoutAuth0();
+
+                  Navigator.pop(context);
+                } else {
+                  Navigator.pop(context);
+                }
               },
               text: "Logout",
               width: MediaQuery.of(context).size.width * 0.5,

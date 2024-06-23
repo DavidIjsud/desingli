@@ -4,6 +4,8 @@ import Flutter
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
     
+    final let CHANNEL : String = "signli.app/channel"
+    
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -24,7 +26,7 @@ import Flutter
             
                 case "launchLocalNotification":
                     if let arguments = call.arguments as? [String :  Any] ,
-                       let title = arguments[ "title" ] as? Double,
+                       let title = arguments[ "title" ] as? String,
                        let message = arguments["message"] as? String
                     {
                         

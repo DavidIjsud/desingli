@@ -13,10 +13,15 @@
     <img src="https://github.com/DavidIjsud/desingli/assets/35741206/755a47f1-94b3-4c17-bca5-4e87f958f237" width="300"/>
 </div>
 
-## Video
+## NOTE:
+
+Due that for IOS is needed a paid developer account for auth0 the validation for ios in this step is skipped.
+
+## Video ANDROID
 
 https://github.com/DavidIjsud/desingli/assets/35741206/52d6fbf6-1a87-452e-81a8-337397611ead
 
+## Video IOS
 
 ## Overview
 
