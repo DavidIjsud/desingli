@@ -1,5 +1,15 @@
 # Stock Tracker App
 
+## Overview
+
+Welcome to the **Stock Tracker App**! This mobile application, built with Flutter, allows users to efficiently track and manage their stock investments. Here are the main features of our app:
+
+1. **Login and Logout using Auth0**
+2. **Search for Stocks from Finnhub Services**
+3. **Set Alerts for Specific Stocks and Prices**
+4. **Local Notifications for Price Alerts**
+5. **Real-time Stock Price and Percentage Changes**
+
 ## Captures
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -28,15 +38,7 @@ https://github.com/DavidIjsud/desingli/assets/35741206/52d6fbf6-1a87-452e-81a8-3
 
 https://github.com/DavidIjsud/desingli/assets/35741206/e238ba7d-0250-4e95-8025-c7b6f11475ed
 
-## Overview
 
-Welcome to the **Stock Tracker App**! This mobile application, built with Flutter, allows users to efficiently track and manage their stock investments. Here are the main features of our app:
-
-1. **Login and Logout using Auth0**
-2. **Search for Stocks from Finnhub Services**
-3. **Set Alerts for Specific Stocks and Prices**
-4. **Local Notifications for Price Alerts**
-5. **Real-time Stock Price and Percentage Changes**
 
 ## Features
 
