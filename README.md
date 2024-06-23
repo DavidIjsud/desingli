@@ -17,7 +17,6 @@
 
 https://github.com/DavidIjsud/desingli/assets/35741206/52d6fbf6-1a87-452e-81a8-337397611ead
 
-## Missing files
 
 ## Overview
 
