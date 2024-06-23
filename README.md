@@ -17,11 +17,16 @@
 
 Due that for IOS is needed a paid developer account for auth0 the validation for ios in this step is skipped.
 
+![Captura de Pantalla 2024-06-23 a la(s) 03 55 41](https://github.com/DavidIjsud/desingli/assets/35741206/d97cc2ac-66df-4c4e-8712-d2e5be71ce26)
+
+
 ## Video ANDROID
 
 https://github.com/DavidIjsud/desingli/assets/35741206/52d6fbf6-1a87-452e-81a8-337397611ead
 
 ## Video IOS
+
+https://github.com/DavidIjsud/desingli/assets/35741206/e238ba7d-0250-4e95-8025-c7b6f11475ed
 
 ## Overview
 
