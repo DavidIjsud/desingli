@@ -1,5 +1,24 @@
 # Stock Tracker App
 
+## Captures
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/90ba4124-a35f-41ef-ab0f-db87315eaa21" width="300"/>
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/cf11a900-5f0e-4a55-80d5-30af0f3d9291" width="300"/>
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/6491f992-1579-419a-9db6-0da5e92928cb" width="300"/>
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/09f5ad8f-ce31-45b2-963b-3d0d94ca1b9e" width="300"/>
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/dba7c264-3178-487e-bdc2-16e83553758b" width="300"/>
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/fa1be2d5-f104-4557-8fd5-6ec430a37fd4" width="300"/>
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/d2fa1c9a-2086-4866-9d6d-8eeb61715382" width="300"/>
+    <img src="https://github.com/DavidIjsud/desingli/assets/35741206/755a47f1-94b3-4c17-bca5-4e87f958f237" width="300"/>
+</div>
+
+## Video
+
+https://github.com/DavidIjsud/desingli/assets/35741206/52d6fbf6-1a87-452e-81a8-337397611ead
+
+## Missing files
+
 ## Overview
 
 Welcome to the **Stock Tracker App**! This mobile application, built with Flutter, allows users to efficiently track and manage their stock investments. Here are the main features of our app:
@@ -49,27 +68,8 @@ Stay updated with real-time changes in stock prices and percentages. The app ens
 - Real-time updates
 - Percentage change tracking
 
-## Captures
 
-![photo_5170156166796389487_y](https://github.com/DavidIjsud/desingli/assets/35741206/90ba4124-a35f-41ef-ab0f-db87315eaa21)
 
-![photo_5170156166796389494_y](https://github.com/DavidIjsud/desingli/assets/35741206/cf11a900-5f0e-4a55-80d5-30af0f3d9291)
-
-![photo_5170156166796389486_y](https://github.com/DavidIjsud/desingli/assets/35741206/6491f992-1579-419a-9db6-0da5e92928cb)
-
-![photo_5170156166796389488_y](https://github.com/DavidIjsud/desingli/assets/35741206/09f5ad8f-ce31-45b2-963b-3d0d94ca1b9e)
-
-![photo_5170156166796389489_y](https://github.com/DavidIjsud/desingli/assets/35741206/dba7c264-3178-487e-bdc2-16e83553758b)
-
-![photo_5170156166796389490_y](https://github.com/DavidIjsud/desingli/assets/35741206/fa1be2d5-f104-4557-8fd5-6ec430a37fd4)
-
-![photo_5170156166796389491_y](https://github.com/DavidIjsud/desingli/assets/35741206/d2fa1c9a-2086-4866-9d6d-8eeb61715382)
-
-![photo_5170156166796389492_y](https://github.com/DavidIjsud/desingli/assets/35741206/755a47f1-94b3-4c17-bca5-4e87f958f237)
-
-## Video
-
-https://github.com/DavidIjsud/desingli/assets/35741206/52d6fbf6-1a87-452e-81a8-337397611ead
 
 
 
