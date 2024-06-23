@@ -4,11 +4,12 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:designli/components/exceptions/server_exceptions.dart';
 import 'package:designli/components/failure/failure.dart';
-import 'package:designli/components/network/end_points.dart';
-import 'package:designli/components/network/network_client.dart';
 import 'package:designli/modules/selection_stock/data/models/symbol_look_up.dart';
 import 'package:designli/modules/selection_stock/data/models/symbol_lookup_request.dart';
 import 'package:designli/modules/selection_stock/data/repository/stock_selection_repository.dart';
+
+import '../../../../services/network/end_points.dart';
+import '../../../../services/network/network_client.dart';
 
 class StockRepositoryImpl implements StockRepository {
   StockRepositoryImpl({

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:designli/components/native_channel/channel.dart';
 import 'package:designli/components/viewmodel/based_view_model.dart';
 import 'package:designli/modules/selection_stock/data/repository/stock_selection_repository.dart';
 
@@ -59,7 +60,7 @@ class SelectionStockViewModel extends BaseViewModel<SelectionStockState> {
     _symbolLookUpSelected = symbolLookUp;
   }
 
-  addValueToPriceForAlert(double price) {
+  addValueToPriceForAlert(double? price) {
     _priceSelected = price;
   }
 
@@ -69,6 +70,10 @@ class SelectionStockViewModel extends BaseViewModel<SelectionStockState> {
 
   void disposeTimerDebounce() {
     _debounce?.cancel();
+  }
+
+  requestPostNotificationsPermission() {
+    ChannelNative.platform.invokeMethod('requestPostNotificationsPermission');
   }
 
   resetState() {

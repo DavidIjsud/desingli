@@ -1,17 +1,31 @@
 import 'package:designli/components/widgets/loaders/load_page.dart';
 import 'package:designli/modules/selection_stock/presentation/selection_stock_view_model.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:designli/modules/watching_list/presentation/watch_list_viewmodel.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ResultStocksCard extends StatefulWidget {
-  const ResultStocksCard({super.key});
+  const ResultStocksCard({
+    super.key,
+    required this.stockSelectionController,
+  });
+
+  final TextEditingController stockSelectionController;
 
   @override
   State<ResultStocksCard> createState() => _ResultStocksCardState();
 }
 
 class _ResultStocksCardState extends State<ResultStocksCard> {
+  late final WatchListViewModel _watchListViewModel;
+
+  @override
+  void initState() {
+    super.initState();
+    _watchListViewModel = context.read<WatchListViewModel>();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<SelectionStockViewModel>(
@@ -35,21 +49,33 @@ class _ResultStocksCardState extends State<ResultStocksCard> {
                 child: ListView.builder(
                     itemCount: productsStock?.length,
                     itemBuilder: (_, index) {
-                      return Column(
-                        children: [
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          Text(
-                            "${productsStock![index].description}, ${productsStock[index].symbol}",
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          const Divider(
-                            color: Colors.grey,
-                          ),
-                        ],
+                      return InkWell(
+                        onTap: () {
+                          viewModel
+                              .addValueToSymbolSelected(productsStock[index]);
+                          viewModel.resetState();
+                          _watchListViewModel.assignSymbolSelectedForAlert(
+                              productsStock[index]);
+                          final symbolSelected =
+                              productsStock[index].displaySymbol;
+                          widget.stockSelectionController.text = symbolSelected;
+                        },
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            Text(
+                              "${productsStock![index].description}, ${productsStock[index].symbol}",
+                            ),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            const Divider(
+                              color: Colors.grey,
+                            ),
+                          ],
+                        ),
                       );
                     }),
               ));

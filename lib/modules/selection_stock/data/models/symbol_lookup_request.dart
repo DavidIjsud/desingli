@@ -1,4 +1,4 @@
-import '../../../../components/network/network_request.dart';
+import '../../../../services/network/network_request.dart';
 
 class SymbolLookUpRequest extends NetworkRequest {
   SymbolLookUpRequest({

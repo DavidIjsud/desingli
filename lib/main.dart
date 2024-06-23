@@ -1,14 +1,20 @@
 import 'dart:convert';
 
-import 'package:designli/components/network/end_points.dart';
-import 'package:designli/components/network/network_client.dart';
+import 'package:auth0_flutter/auth0_flutter.dart';
 import 'package:designli/modules/main_page/presentation/main_page.dart';
 import 'package:designli/modules/selection_stock/data/repository/stock_selection_repository.impl.dart';
 import 'package:designli/modules/selection_stock/presentation/selection_stock_view_model.dart';
 import 'package:designli/modules/splash_screen/splash.dart';
+import 'package:designli/modules/watching_list/presentation/watch_list_viewmodel.dart';
+import 'package:designli/services/authentication/auth0_authentication.dart';
+import 'package:designli/services/network/end_points.dart';
+import 'package:designli/services/network/network_client.dart';
+import 'package:designli/services/sockets/finnhub_web_socket_service.impl.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+
+import 'modules/main_page/presentation/login_auth_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,20 +71,39 @@ class _MyAppState extends State<MyApp> {
             stockRepository: StockRepositoryImpl(
                 networkClient: NetworkClient(), endPoints: _endpoints),
           );
+          final watchListViewModel = WatchListViewModel(
+              finnhubWebSocketService:
+                  FinnhubWebSocketServiceImpl(endpoints: _endpoints));
           selectionViewModel.initViewModel();
+          watchListViewModel.initViewModel();
+
+          Auth0 auth0 = Auth0(
+            _endpoints.domainUrl,
+            _endpoints.clientIdAuth0,
+          );
+
           return MultiProvider(
             providers: [
+              ChangeNotifierProvider<Auth0AuthenticaionViewModel>(
+                create: (_) => Auth0AuthenticaionViewModel(
+                  auth0: auth0,
+                ),
+              ),
               ChangeNotifierProvider<SelectionStockViewModel>(
                 create: (_) => selectionViewModel,
+              ),
+              ChangeNotifierProvider<WatchListViewModel>(
+                create: (_) => watchListViewModel,
               ),
             ],
             child: MaterialApp(
               title: 'Flutter Demo',
+              debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
               ),
-              home: const MainPageMultipleSelection(),
+              home: const LoginAuth0Page(),
             ),
           );
         });
