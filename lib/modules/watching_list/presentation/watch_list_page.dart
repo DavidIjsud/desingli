@@ -34,36 +34,32 @@ class _WatchListPageState extends State<WatchListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-        onWillPop: () {
-          return Future.value(true);
-        },
-        child: Scaffold(
-          body: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: SafeArea(
-                child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Consumer<WatchListViewModel>(
-                builder: (_, viewModel, Widget? w) {
-                  log("Called to refresh list");
-                  final listStock = viewModel.state?.listSymbols;
-                  return ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: listStock != null ? listStock.length : 0,
-                      itemBuilder: (_, index) {
-                        final stock = listStock?[index];
-                        return StockCard(
-                          name: stock?.displaySymbol ?? "",
-                          currentPrice: stock?.currentPrice ?? 0.0,
-                          percentageChange: stock?.porcentChange ?? 0.0,
-                        );
-                      });
-                },
-              ),
-            )),
+    return Scaffold(
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: SafeArea(
+            child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Consumer<WatchListViewModel>(
+            builder: (_, viewModel, Widget? w) {
+              log("Called to refresh list");
+              final listStock = viewModel.state?.listSymbols;
+              return ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: listStock != null ? listStock.length : 0,
+                  itemBuilder: (_, index) {
+                    final stock = listStock?[index];
+                    return StockCard(
+                      name: stock?.displaySymbol ?? "",
+                      currentPrice: stock?.currentPrice ?? 0.0,
+                      percentageChange: stock?.porcentChange ?? 0.0,
+                    );
+                  });
+            },
           ),
-        ));
+        )),
+      ),
+    );
   }
 }
