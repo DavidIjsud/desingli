@@ -1,0 +1,7 @@
+{
+  "tokenFinhub" : "cpqe719r01qo647nifr0cpqe719r01qo647nifrg",
+  "symbolLookUp" : "https://finnhub.io/api/v1/search?q={symbol}&token={token}",
+  "socketUrlBase" : "wss://ws.finnhub.io?token={token}",
+  "domainUrlAuth0" : "dev-iuvrinxum1bpqk01.us.auth0.com",
+  "clientIdAuth0" : "Y6wDbG1SOofgBfBTld8KVv91QmLQxvqb"
+}
